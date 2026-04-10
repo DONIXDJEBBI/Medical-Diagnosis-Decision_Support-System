@@ -1,0 +1,35 @@
+{
+  "comparison_timestamp": "2026-01-28T09:05:54.114252",
+  "fuzzy_logic": {
+    "effectiveness_metrics": {
+      "accuracy": 0.355,
+      "precision_macro": 0.3204,
+      "recall_macro": 0.3169,
+      "f1_macro": 0.2939
+    },
+    "computational_efficiency": {
+      "avg_time_per_sample_ms": 0.2052,
+      "total_time_ms": 246.21,
+      "memory_usage_mb": 0.1
+    }
+  },
+  "decision_tree": {
+    "effectiveness_metrics": {
+      "accuracy": 0.5675,
+      "precision_macro": 0.5525,
+      "recall_macro": 0.4547,
+      "f1_macro": 0.4785
+    },
+    "computational_efficiency": {
+      "avg_time_per_sample_ms": 0.0051,
+      "total_time_ms": 6.14,
+      "memory_usage_mb": 0.22
+    }
+  },
+  "development_experience": {
+    "implementation_difficulty": "Fuzzy Logic (Very High) vs Decision Tree (Moderate)",
+    "development_time_hours": "Fuzzy Logic (~40h) vs Decision Tree (~15h)",
+    "code_complexity": "Fuzzy Logic (High) vs Decision Tree (Low)",
+    "interpretability": "Fuzzy Logic (100%) vs Decision Tree (~60%)"
+  }
+}

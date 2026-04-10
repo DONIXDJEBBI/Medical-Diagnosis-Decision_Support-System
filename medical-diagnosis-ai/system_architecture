@@ -1,0 +1,50 @@
+// System Architecture Workflow
+digraph {
+	graph [rankdir=TB]
+	node [fillcolor=lightblue fontname=Arial fontsize=10 shape=box style="rounded,filled"]
+	"1_patient" [label="PATIENT INPUT
+(Symptoms & Lab Tests)
+
+Fever, Cough, WBC,
+CRP, SpO2, X-ray, etc." fillcolor="#FFE4B5"]
+	"2_data" [label="COLLECT PATIENT DATA" fillcolor="#FFE4B5"]
+	"3_fuzzy" [label="FUZZY LOGIC MODEL
+
+Applies medical expert rules
+for symptom analysis" fillcolor="#87CEEB"]
+	"3_tree" [label="DECISION TREE MODEL
+
+Learns patterns from data
+for classification" fillcolor="#98FB98"]
+	"4_fuzzy_out" [label="FUZZY DIAGNOSIS
+
+Disease scores & confidence
+Based on fuzzy rules" fillcolor="#87CEEB"]
+	"4_tree_out" [label="ML DIAGNOSIS
+
+Disease prediction & probability
+Based on learned patterns" fillcolor="#98FB98"]
+	"5_compare" [label="COMPARE RESULTS
+
+Analyze model outputs
+Check agreement level" fillcolor="#DDA0DD"]
+	"6_agreement" [label="AGREEMENT CHECK
+
+Models agree?
+✓ High confidence
+✗ Investigate difference" fillcolor="#F0E68C"]
+	"7_output" [label="FINAL RESULTS & METRICS
+
+Diagnosis recommendation
+Confidence scores
+Performance metrics" fillcolor="#FFB6C1"]
+	"1_patient" -> "2_data" [label="Enter Data"]
+	"2_data" -> "3_fuzzy" [label="Pass to Model"]
+	"2_data" -> "3_tree" [label="Pass to Model"]
+	"3_fuzzy" -> "4_fuzzy_out" [label=Inference]
+	"3_tree" -> "4_tree_out" [label=Prediction]
+	"4_fuzzy_out" -> "5_compare" [label="Result 1"]
+	"4_tree_out" -> "5_compare" [label="Result 2"]
+	"5_compare" -> "6_agreement" [label=Analysis]
+	"6_agreement" -> "7_output" [label=Decision]
+}
